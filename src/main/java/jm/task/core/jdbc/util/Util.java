@@ -13,7 +13,15 @@ public class Util {
     private static Connection connection;
 
     public static Connection getConnection() {
-        if (connection == null) {
+        boolean connectionClosed = true;
+        try {
+            if (connection != null) {
+                connectionClosed = connection.isClosed();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (connection == null || connectionClosed) {
             try {
                 connection = DriverManager
                         .getConnection(DB_URL, USER, PASS);
