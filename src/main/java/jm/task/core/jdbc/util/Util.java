@@ -30,7 +30,7 @@ public class Util {
                 settings.put(Environment.URL, DB_URL);
                 settings.put(Environment.USER, DB_USER);
                 settings.put(Environment.PASS, DB_PASS);
-                settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL13Dialect");
+                settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL10Dialect");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 settings.put(Environment.HBM2DDL_AUTO, "create-drop");
