@@ -33,7 +33,7 @@ public class Util {
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL10Dialect");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+                settings.put(Environment.HBM2DDL_AUTO, "update");
                 configuration.setProperties(settings);
 
                 configuration.addAnnotatedClass(User.class);
@@ -41,6 +41,7 @@ public class Util {
                         .applySettings(configuration.getProperties());
 
                 sessionFactory = configuration.buildSessionFactory(builder.build());
+
             } catch (Exception e) {
                 System.err.println("Ошибка при подключении к СУБД");
             }
