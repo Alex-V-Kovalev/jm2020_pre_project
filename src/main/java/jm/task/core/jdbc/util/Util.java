@@ -49,6 +49,14 @@ public class Util {
         return sessionFactory;
     }
 
+    public static void restartSessionFactory() {
+        if (sessionFactory != null) {
+            sessionFactory.close();
+            sessionFactory = null;
+            sessionFactory = getSessionFactory();
+        }
+    }
+
     public static Connection getConnection() {
         boolean connectionClosed = true;
         try {
