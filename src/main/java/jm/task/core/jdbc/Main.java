@@ -1,9 +1,6 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.service.UserServiceImpl;
-
-import java.util.List;
+import jm.task.core.jdbc.service.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +12,7 @@ public class Main {
         * Очистка таблицы User(ов)
         * Удаление таблицы
         */
-        UserServiceImpl userService = new UserServiceImpl();
+        UserService userService = new UserServiceImpl();
         userService.createUsersTable();
         for (int i = 0; i < 4; i++) {
             int j = i + 1;
